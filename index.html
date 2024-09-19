@@ -5,19 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script/main.js" defer></script>
     <link rel="stylesheet" href="styles/style.css">
-    <title>Etch a Sketch</title>
+    <title>Meu esquema</title>
 </head>
 <body>
-    <div class="body">
-        <h1>Testando</h1>
-        <div class="container">
-        <!-- reenderizar divs aqui -->
-        </div>
-        <label for="number">Digite your number</label>
-        <input type="number" name="number" id="number">
-        <button type="submit" class="submit" >submit</button>
-    </div>
+    <header> Meu esquema </header>
+    <main>
+        <aside class="toolsContainer" id='toolsContainer'>
+            <div class="pickColorContainer">
+                <label for="pickColor" id="labelPickColor">Pick a Color: </label>
+                <input type="color" id="pickColor">
+            </div>
+            <button class="btnBlackWhite toWhite" id="btnBlackWhite">Black / White</button>
+            <button class="btnColorful" id="btnColorful">ColorFull</button>
+            <button class="btnGrayScale" id="btnGrayScale">Gray-Scale</button>
+            <button class="btnLightning" id="btnLightning">Lightning</button>
+            <button class="btnShading" id="btnShading">Shading</button>
+            <button class="btnClear" id="btnClear">Clear Grid</button>
+            <button class="btnToggleGrid" id="btnToggleGrid">Toggle Grid</button>
 
+            <div class="GridSizeContainer">
+                <label class="labelGridSizes"> Grid Size:</label>
+                <div class="gridSizeWrap">
+                    <button class="btnGridSmall" id="btnGridSmall">S</button>
+                    <button class="btnGridMedium" id="btnGridMedium">M</button>
+                    <button class="btnGridLarge" id="btnGridLarge">L</button>
+                </div>
+            </div>
+            <div id="gridRangeContainer">
+                <label for="customGrid">Custom grid Size</label>
+                <input type="range" min="2" max="100" id="customGrid">
+                <p id="customGridValue"> Value: </p>
+            </div>
+        </aside>
+        <!-- GRID -->
+         <div class="content">
+            <div class="container"></div>
+         </div>
+
+         <div class="help">
+            <div class="instructions">
+                <p>instructions</p>
+                <button id="btnClose">Close</button>
+            </div>
+            <ul>
+                <li><Strong>Click</Strong> on the Sketch to <strong>Pause</strong> / <strong>Resume</strong> painting </li>
+                <li><strong>Right Click</strong> on a square to <strong>Pick</strong> its color</li>
+            </ul>
+        </div>
+    </main>
+    <footer>GitHub - <a href="#" target="_blank">Diego ACDS</a></footer>
     
 </body>
 </html>
