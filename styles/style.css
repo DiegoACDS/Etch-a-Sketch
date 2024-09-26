@@ -1,34 +1,230 @@
-*,
-*::before,
-*::after {
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
     box-sizing: border-box;
 }
-/* management of title and container */
-.body {
+
+body {
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header,
+footer {
+    flex: none;
+    text-align: center;
+    background-color: hsl(300, 20%, 97%);
+}
+
+header {
+    height: 72px;
+    box-shadow: 0px 3px 3px 0px rgb(189, 189, 189);
+    color: rgb(65, 65, 65);
+    font-size: 38px;
+    font-weight: 900;
+    border-bottom: 2px solid rgb(223, 223, 223);
+}
+
+footer {
+    height: 48px;
+    border-top: 2px solid rgb(223, 223, 223);
+    box-shadow: 1px 0px 3px 0px rgb(189, 189, 189);
+    font-size: 18px;  
+}
+
+main {
+    display: flex;
+    flex: 1;  
+}
+
+aside {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 15;
+    background-color: hsl(300, 20%, 97%);
+    border: 2px solid rgb(223, 223, 223);
+    box-shadow: 1px 1px 3px 0px rgb(189, 189, 189);
+    flex: 0 1 auto;
+}
+
+.help {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 14px;
+    gap: 15px;
+    align-items: stretch;
+    background-color: hsl(300, 1%, 97%);
+    border: 2px solid rgb(223, 223, 223);
+    box-shadow: 1px 1px 3px 0px rgb(189, 189, 189);
+    flex: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+button {
+    width: 140px;
+    height: 42px;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fffffe;
+    background-color: rgb(103, 182, 231);
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgb(189, 189, 189);
+    opacity: 90%;
+
+}
+
+#btnClose {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+    color: rgb(65, 65, 65);
+    background-color: hsl(300, 20%, 97%);
+    box-shadow: 1px 1px 1px rgb(189, 189, 189);
+
+}
+
+.instructions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    opacity: 100%;
+}
+
+.gridSizeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.gridSizeWrap {
+    display: flex;
+    gap: 5px;
+}
+
+.gridSizeWrap > button {
+    width: 50px;
+}
+
+.labelGridSizes {
+    display: block;
+}
+
+.btnGridSmall,
+.btnGridMedium,
+.btnGridLarge {
+    width: 80px;
+    height: 36px;
+}
+
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-
+    flex: 1;
+    background-color: hsl(300, 1%, 97%);
 }
 
-/* panel of container */
 .container {
-    border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
-    height: 600px;
-    overflow: hidden;
-    align-items: flex-start;
+    width: 640px;
+    height: 640px;
+    outline: 5px solid rgb(180, 180, 180);
+    background-color: white;
+    box-shadow: 9px 9px 1px rgb(124, 124, 124);
+
+ }
+
+.outlined {
+    outline: 1px solid rgb(180, 180, 180);
+
 }
 
+.square {
+    /* Grow to fill container space left */
+    opacity: 0.85;
+    flex: 1 1 auto;
+}
 
-/* mini div */
-.mini {
+#btnColorful {
+    background-image: linear-gradient(to right, rgb(240, 42, 42),rgb(245, 241, 15),rgb(41, 236, 123),rgb(80, 69, 238),rgb(233, 77, 233)); 
+
+}
+
+#btnGrayScale {
+    background-color: rgb(190, 190, 190);
+}
+
+#btnBlackWhite {
+    background-image: linear-gradient(to right, rgb(51, 51, 51), rgb(255, 255, 255));
+}
+
+#btnLightning {
+    background-image: radial-gradient(rgb(168, 168, 168), rgb(121, 121, 121), rgb(65, 65, 65));
+}
+
+#btnShading {
+    background-image: radial-gradient(rgb(50,50,50), rgb(90,90,90), rgb(165,165,165));
+}
+
+#pickColor {
+    width: 140px;
+    height: 50px;
+    padding: 3px 3px;
+    box-shadow: 1px 1px 1px rgb(189, 189, 189);
+    opacity: 90%;
+}
+
+label,
+div > p {
+    font-size: 20px;
+    font-weight: 900;
+
+}
+
+p,
+div,
+label,
+footer {
+    color: rgb(65, 65, 65);
+}
+
+#pickColor:hover {
+    opacity: 100%;
+}
+
+.pickColorContainer, #gridRangeContainer {
     display: flex;
-    border: 2px solid black;
-    flex: 1 0 ;
-    min-width: 16px;
-    min-height: 16px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
 }
+
+.hidden {
+    display: none;
+}
+
+ 
+
